@@ -91,10 +91,10 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: Please describe the issue you encountered, including steps to reproduce the issue.
+      description: Please describe the issue you encountered, including steps to reproduce the issue and any screenshots.
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: chapter
     attributes:
       label: Chapter
