@@ -19,7 +19,6 @@ body:
         - 🛠 Improvement
     validations:
       required: true
- 
   - type: dropdown
     id: priority
     attributes:
@@ -32,26 +31,6 @@ body:
         - ⛔️ Blocker (The course cannot be run at all)
     validations:
       required: true
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: email@example.com
-    validations:
-      required: false
-  - type: dropdown
-    id: role
-    attributes:
-      label: Role
-      description: What is your role?
-      options:
-        - Customer
-        - Instructor
-        - Learning Experience
-        - Red Hat Internal
-        - Curriculum Developer
-        - Other
   - type: dropdown
     id: version
     attributes:
@@ -118,3 +97,23 @@ body:
     attributes:
       label: Workaround
       description: If relevant, please describe a workaround for the issue.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: email@example.com
+    validations:
+      required: false
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: What is your role?
+      options:
+        - Customer
+        - Instructor
+        - Learning Experience
+        - Red Hat Internal
+        - Curriculum Developer
+        - Other
