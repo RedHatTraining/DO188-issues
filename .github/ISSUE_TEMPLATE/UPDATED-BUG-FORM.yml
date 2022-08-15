@@ -26,9 +26,9 @@ body:
       label: Priority
       description: What is the priority of the issue?
       options:
-        - Minor
-        - Major (An exercise is broken)
-        - Critical (Multiple exercises are broken)
+        - ⚠️ Minor
+        - ❗️ Major (An exercise is broken)
+        - ‼️ Critical (Multiple exercises are broken)
         - ⛔️ Blocker (The course cannot be run at all)
     validations:
       required: true
