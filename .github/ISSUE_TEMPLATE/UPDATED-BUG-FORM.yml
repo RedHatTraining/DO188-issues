@@ -29,7 +29,7 @@ body:
         - Minor
         - Major (An exercise is broken)
         - Critical (Multiple exercises are broken)
-        - Blocker (The course cannot be run at all)
+        - ⛔️ Blocker (The course cannot be run at all)
     validations:
       required: true
   - type: input
