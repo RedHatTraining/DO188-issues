@@ -88,9 +88,9 @@ body:
   - type: input
     id: chapter
     attributes:
-      label: Chapter
-      description: In which chapter does the issue occur?
-      placeholder: (e.g. Ch01)
+      label: Chapter and Section
+      description: In which chapter and section does the issue occur?
+      placeholder: (e.g. ch01s07)
     validations:
       required: true
   - type: textarea
