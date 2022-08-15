@@ -1,6 +1,6 @@
 name: Issue Report 2
 description: File a report
-title: "[Bug]: "
+title: "[Issue]: "
 labels: ["bug", "triage"]
 assignees:
   - octocat
@@ -15,8 +15,8 @@ body:
       label: Issue Type
       description: What type of issue are you experiencing?
       options:
-        - Bug
-        - Improvement
+        - 🐛 Bug
+        - 🛠 Improvement
     validations:
       required: true
  
