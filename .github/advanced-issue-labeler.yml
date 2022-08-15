@@ -1,5 +1,0 @@
-policy:
-  minor: ['⚠️ Minor']
-  major: ['❗️ Major (An exercise is broken)']
-  critical: ['❗️❗️ Critical (Multiple exercises are broken)']
-  blocker: ['⛔️ Blocker (The course cannot be run at all)']

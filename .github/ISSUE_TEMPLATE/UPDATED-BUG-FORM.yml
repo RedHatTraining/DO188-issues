@@ -23,12 +23,12 @@ body:
     id: priority
     attributes:
       label: Priority
-      description: What is the priority of the issue?
+      description: What is the priority of the issue? Major - An exercise does not work. Critical - Multiple exercises do not work. Blocker - The course cannot be completed.
       options:
         - ⚠️ Minor
-        - ❗️ Major (An exercise is broken)
-        - ❗️❗️ Critical (Multiple exercises are broken)
-        - ⛔️ Blocker (The course cannot be run at all)
+        - ❗️ Major
+        - ❗️❗️ Critical
+        - ⛔️ Blocker
     validations:
       required: true
   - type: dropdown
