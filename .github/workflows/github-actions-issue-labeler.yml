@@ -24,3 +24,16 @@ jobs:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
           section: issue_type
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set labels based on priority field
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: priority
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set labels based on components
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: components
+          token: ${{ secrets.GITHUB_TOKEN }}
+
