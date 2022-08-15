@@ -1,7 +1,7 @@
 name: Issue Report 2
 description: File a report
 title: "[Issue]: "
-labels: ["bug", "triage"]
+labels: ["triage"]
 assignees:
   - octocat
 body:
@@ -90,6 +90,7 @@ body:
     attributes:
       label: Chapter
       description: In which chapter does the issue occur?
+      placeholder: (e.g. Ch01)
     validations:
       required: true
   - type: textarea
