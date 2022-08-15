@@ -1,0 +1,120 @@
+name: Issue Report 2
+description: File a report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue report!
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      description: What type of issue are you experiencing?
+      options:
+        - Bug
+        - Improvement
+    validations:
+      required: true
+ 
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What is the priority of the issue?
+      options:
+        - Minor
+        - Major (An exercise is broken)
+        - Critical (Multiple exercises are broken)
+        - Blocker (The course cannot be run at all)
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: email@example.com
+    validations:
+      required: false
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: What is your role?
+      options:
+        - Customer
+        - Instructor
+        - Learning Experience
+        - Red Hat Internal
+        - Curriculum Developer
+        - Other
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: Which version of the course did you encounter this issue?
+      options:
+        - OCP 4.10
+        - OCP 4.6
+    validations:
+      required: true
+  - type: dropdown
+    id: components
+    attributes:
+      label: Which component(s) is affected by the issue?
+      multiple: true
+      options:
+        - Student Guide
+        - Instructor Guide
+        - Lab Environment
+        - Video Classroom
+        - Slides
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: delivery_mode
+    attributes:
+      label: In which delivery mode is the issue occuring?
+      multiple: true
+      options:
+        - Instructor Led In-Person Training (ILT)
+        - Virtual Training (VT)
+        - Self-Paced Online Training (ROLE)
+  - type: dropdown
+    id: language
+    attributes:
+      label: In which language is the issue occuring?
+      options:
+        - en-US (English)
+        - de-DE (German)
+        - es-ES (Spanish)
+        - fr-FR (French)
+        - ja-JP (Japanese)
+        - ko-KR (Korean)
+        - pt-BR (Portugese, Brazilian)
+        - zh-CN (Chinese, Simplified)
+        - zh-TW (Chinese, Traditional)
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Please describe the issue you encountered, including steps to reproduce the issue and any screenshots.
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter
+      description: In which chapter does the issue occur?
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: If relevant, please describe a workaround for the issue.
