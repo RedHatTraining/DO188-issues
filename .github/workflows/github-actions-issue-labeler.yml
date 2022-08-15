@@ -3,17 +3,24 @@ on:
   issues:
     types: [ opened ]
 jobs:
-  Explore-GitHub-Actions:
+  label-issue-type:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-praser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/UPDATED-BUG-FORM.yml
+
+      - name: Set labels based on issue_type field
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: issue_type
+          token: ${{ secrets.GITHUB_TOKEN }}
