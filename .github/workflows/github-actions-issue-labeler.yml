@@ -2,38 +2,33 @@ name: Issue Labeler
 on:
   issues:
     types: [ opened ]
+
+permissions:
+  contents: read
+
 jobs:
   label-issue-type:
     runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
+    strategy:
+      matrix:
+        template: [ UPDATED-BUG-FORM.yml ]
+
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: Parse issue form
-        uses: stefanbuck/github-issue-praser@v2
+        uses: stefanbuck/github-issue-parser@v2
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/UPDATED-BUG-FORM.yml
+          template-path: .github/ISSUE_TEMPLATE/${{ matrix.template }}
 
-      - name: Set labels based on issue_type field
-        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
+      - name: Set labels based on user input
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v2
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
-          section: issue_type
+          template: ${{ matrix.template }}
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set labels based on priority field
-        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
-        with:
-          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
-          section: priority
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set labels based on components
-        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
-        with:
-          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
-          section: components
-          token: ${{ secrets.GITHUB_TOKEN }}
-

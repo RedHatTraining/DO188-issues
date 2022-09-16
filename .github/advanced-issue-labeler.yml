@@ -1,0 +1,36 @@
+policy:
+  - template: ['UPDATED-BUG-FORM.yml']
+    section:
+      - id: ['issue_type']
+        block-list: []
+        label:
+          - name: '🐛 Bug'
+            keys: ['🐛 Bug']
+          - name: '🛠 Improvement'
+            keys: ['🛠 Improvement']
+
+      - id: ['priority']
+        block-list: []
+        label:
+          - name: '⚠️ Minor'
+            keys: ['⚠️ Minor']
+          - name: '❗️ Major'
+            keys: ['❗️ Major']
+          - name: '❗️❗️ Critical'
+            keys: ['❗️❗️ Critical']
+          - name: '⛔️ Blocker'
+            keys: ['⛔️ Blocker']
+
+      - id: ['components']
+        block-list: ['Other']
+        label:
+          - name: 'Student Guide'
+            keys: ['Student Guide']
+          - name: 'Instructor Guide'
+            keys: ['Instructor Guide']
+          - name: 'Lab Environment'
+            keys: ['Lab Environment']
+          - name: 'Video Classroom'
+            keys: ['Video Classroom']
+          - name: 'Slides'
+            keys: ['Slides']
